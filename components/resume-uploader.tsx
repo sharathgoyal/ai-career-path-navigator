@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
@@ -39,11 +40,11 @@ const ResumeUploader = () => {
 
     const skillLines = skillSection
       .split("\n")
-      .map((line) => line.replace(/^\s*[-•]\s*/, "").trim())
+      .map((line: string) => line.replace(/^\s*[-•]\s*/, "").trim())
       .filter(Boolean);
 
     // Convert comma-separated lines into flat list
-    const extractedSkills = skillLines.flatMap((line) =>
+    const extractedSkills = skillLines.flatMap((line: string) =>
       line.split(",").map((s) => s.trim())
     );
 
